@@ -4,7 +4,7 @@
   "description": "Install\r npm i -D gulp gulp-postcss gulp-cssnano gulp-autoprefixer gulp-terser gulp-image-min browser-sync",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp purge"
+    "build": "purge"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +25,13 @@
   ],
   "dependencies": {
     "gulp-purgecss": "^4.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lancebelarmino/stats-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lancebelarmino/stats-card/issues"
+  },
+  "homepage": "https://github.com/lancebelarmino/stats-card#readme"
 }

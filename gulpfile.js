@@ -25,6 +25,7 @@ function cssTask() {
     require('tailwindcss')
   ]))
   .pipe(autoprefixer())
+  .pipe(cssnano())
   .pipe(concat('main.css'))
   .pipe(dest('./dist/css', { sourcemaps: './' }));
 }
@@ -35,17 +36,6 @@ function jsTask() {
     .pipe(concat('bundle.js'))
     .pipe(terser())
     .pipe(dest('./dist/scripts', { sourcemaps: './' }));
-}
-
-// Purge Task
-function purgeTask() {
-  return gulp.src('dist/**/*.css')
-  .pipe(purgecss({
-    content: ['dist/**/*.html']
-  }))
-  .pipe(cssnano())
-  .pipe(concat('main.css'))
-  .pipe(gulp.dest('dist/css'))
 }
 
 // Assets Task
@@ -88,4 +78,3 @@ exports.default = series(
   browsersyncServe,
   watchTask
 );
-exports.purge = purgeTask;
